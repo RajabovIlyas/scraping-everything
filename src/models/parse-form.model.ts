@@ -1,6 +1,6 @@
-import {ParseFolderModel} from "@/models/parse-folder.model";
+import { ParseFieldModel } from '@/models/parse-field.model';
 
 export interface ParseFormModel {
-    url: string;
-    folders: ParseFolderModel[];
+  url: string;
+  fields: ParseFieldModel[];
 }

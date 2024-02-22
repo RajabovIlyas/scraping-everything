@@ -1,1 +1,1 @@
-export {default} from './ParseForm'
+export { default } from './ParseForm';
