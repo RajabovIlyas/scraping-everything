@@ -1,6 +1,6 @@
 export const menuItems = [
-    {
-        title: 'Parser',
-        path: '/parser',
-    },
+  {
+    title: 'Parser',
+    path: '/parser',
+  },
 ];

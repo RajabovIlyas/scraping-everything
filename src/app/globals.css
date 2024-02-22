@@ -2,44 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-
 }
 
 @layer utilities {
-
 }
 
 @layer components {
+  .main-content {
+    @apply mx-auto min-h-[calc(100vh-11rem)] max-w-screen-xl;
+  }
 
-    .main-content{
-        @apply mx-auto min-h-[calc(100vh-11rem)] max-w-screen-xl;
-    }
+  .header-link {
+    @apply text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-zinc-600;
+  }
 
-    .header-link {
-        @apply text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-zinc-600;
-    }
+  .header-button {
+    @apply rounded  border-2 border-transparent bg-zinc-950  px-4 py-2 text-center text-white ring-gray-200 ring-offset-2 transition hover:bg-gray-800 focus-visible:ring-2 dark:border-zinc-400 dark:bg-gray-950 dark:text-zinc-400 dark:hover:border-zinc-600  dark:hover:bg-zinc-950 dark:hover:text-zinc-600;
+  }
 
-    .header-button {
-        @apply rounded  border-2 border-transparent bg-zinc-950  px-4 py-2 text-center text-white ring-gray-200 ring-offset-2 transition hover:bg-gray-800 focus-visible:ring-2 dark:border-zinc-400 dark:bg-gray-950 dark:text-zinc-400 dark:hover:border-zinc-600  dark:hover:bg-zinc-950 dark:hover:text-zinc-600;
-    }
+  .header-link-icon {
+    @apply header-link flex items-center justify-center gap-1 py-2;
+  }
 
-    .header-link-icon {
-        @apply header-link flex items-center justify-center gap-1 py-2;
-    }
+  /*###########################################################################################################################*/
 
-    /*###########################################################################################################################*/
+  .main-title {
+    font-size: clamp(3rem, 17vw, 8rem);
+    @apply text-center font-medium uppercase leading-none dark:text-zinc-200;
+  }
 
-    .main-title {
-        font-size: clamp(3rem, 17vw, 8rem);
-        @apply text-center font-medium uppercase leading-none dark:text-zinc-200;
-    }
+  .main-button {
+    @apply flex items-center justify-center gap-1 rounded border-2 border-black bg-white px-5 py-2.5 text-center text-black ring-gray-200 ring-offset-2 transition hover:bg-gray-100 focus-visible:ring-2  dark:border-zinc-200 dark:bg-gray-950 dark:text-zinc-200 dark:hover:bg-gray-900;
+  }
 
-    .main-button {
-        @apply flex items-center justify-center gap-1 rounded border-2 border-black bg-white px-5 py-2.5 text-center text-black ring-gray-200 ring-offset-2 transition hover:bg-gray-100 focus-visible:ring-2  dark:border-zinc-200 dark:bg-gray-950 dark:text-zinc-200 dark:hover:bg-gray-900;
-    }
+  /*###########################################################################################################################*/
 
-    /*###########################################################################################################################*/
+  .form-label{
+    @apply pl-1
+  }
 
+  .form-input{
+    @apply dark:bg-neutral-900 dark:text-zinc-300 dark:border-neutral-700
+    dark:focus:ring-gray-700 dark:focus:border-emerald-700
+    focus:border-gray-500 focus-visible:outline-0 mt-1 bg-gray-50
+    border border-gray-300 text-gray-900 text-sm rounded-lg
+    focus:ring-emerald-500 block w-full p-2.5
+  }
+
+  .form-wrong{
+    @apply dark:text-red-700 mt-1 text-sm text-red-600 h-5
+  }
 }
