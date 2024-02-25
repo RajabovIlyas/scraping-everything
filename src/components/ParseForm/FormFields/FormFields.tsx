@@ -18,8 +18,8 @@ const FormFields: FC<FormFieldsProps> = ({ formFields, register, errors }) => {
       {
         fields.map((field, index) => (
           <div key={field.id}>
-            <div className="flex justify-between">
-            <h2 className="main-title text-2xl text-start">Setting property</h2>
+            <div className='flex justify-between'>
+              <h2 className='main-title text-2xl text-start text-cyan-700'>Setting property</h2>
               <button type='button' onClick={() => remove(index)}
                       className=''>
                 <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5}
@@ -30,32 +30,44 @@ const FormFields: FC<FormFieldsProps> = ({ formFields, register, errors }) => {
               </button>
             </div>
             <div className='md:flex gap-3 justify-between mt-3'>
-              <div className='w-full'>
-                <label htmlFor='className'
-                       className='form-label'>
-                  Class Name
-                </label>
-                <input {...register(`fields.${index}.className`)} className='form-input'/>
-                <p className='form-wrong'>{errors?.fields?.[index]?.className?.message}</p>
+              <div className='lg:flex justify-between w-full gap-3'>
+                <div className='w-full'>
+                  <label htmlFor='propertyName'
+                         className='form-label text-sky-700'>
+                    Property Name
+                  </label>
+                  <input {...register(`fields.${index}.propertyName`)} className='form-input border-sky-700' />
+                  <p className='form-wrong'>{errors?.fields?.[index]?.propertyName?.message}</p>
+                </div>
+                <div className='w-full'>
+                  <label htmlFor='searchQuery'
+                         className='form-label text-blue-700'>
+                    Search Query
+                  </label>
+                  <input {...register(`fields.${index}.searchQuery`)} className='form-input border-blue-700' />
+                  <p className='form-wrong'>{errors?.fields?.[index]?.searchQuery?.message}</p>
+                </div>
               </div>
-              <div className='w-full'>
-                <label htmlFor='propertyName'
-                       className='form-label'>
-                  Property Name
-                </label>
-                <input {...register(`fields.${index}.propertyName`)} className='form-input' />
-                <p className='form-wrong'>{errors?.fields?.[index]?.propertyName?.message}</p>
-              </div>
-              <div className='w-full'>
-                <label htmlFor='url'
-                       className='form-label'>
-                  Property type
-                </label>
-                <input {...register(`fields.${index}.propertyType`)} className='form-input' />
-                <p className='form-wrong'>{errors?.fields?.[index]?.propertyType?.message}</p>
+              <div className='lg:flex justify-between w-full gap-3 '>
+                <div className='w-full'>
+                  <label htmlFor='attribute'
+                         className='form-label text-indigo-700'>
+                    Attribute
+                  </label>
+                  <input {...register(`fields.${index}.attribute`)} className='form-input border-indigo-700' />
+                  <p className='form-wrong'>{errors?.fields?.[index]?.attribute?.message}</p>
+                </div>
+                <div className='w-full'>
+                  <label htmlFor='url'
+                         className='form-label text-violet-700'>
+                    Property type
+                  </label>
+                  <input {...register(`fields.${index}.propertyType`)} className='form-input border-violet-700' />
+                  <p className='form-wrong'>{errors?.fields?.[index]?.propertyType?.message}</p>
+                </div>
               </div>
             </div>
-            {fields.length -1 !== index && <div className='w-full h-[1px] bg-zinc-100 rounded' />}
+            {fields.length - 1 !== index && <div className='w-full h-[1px] bg-zinc-100 rounded' />}
           </div>
         ))
       }

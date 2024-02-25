@@ -6,17 +6,19 @@ import { ParseFormModel } from '@/models/parse-form.model';
 import { ParseType } from '@/enums/parse-type.enum';
 import { PARSE_FIELD_DEFAULT } from '@/constants/parse-filed.constant';
 import { useContext } from 'react';
-import { StateContext } from '@/app/parser/context';
+import { StateContext } from '@/app/simple/context';
 
 const schema: yup.ObjectSchema<ParseFormModel> = yup.object().shape({
-  url: yup.string().required().min(4).max(200).url().label('Url'),
+  url: yup.string().required().min(4).max(500).url().label('Url'),
+  searchGroupQuery: yup.string().required().min(4).max(500).label('Search Group Query'),
   fields: yup
     .array()
     .of(
       yup.object({
         propertyType: yup.mixed<ParseType>().oneOf(Object.values(ParseType)).label('property Type').required(),
-        className: yup.string().label('class Name').required(),
+        searchQuery: yup.string().label('Search Query').required(),
         propertyName: yup.string().label('property Name').required(),
+        attribute: yup.string().label('Attribute').required()
       })
     )
     .default(() => [
