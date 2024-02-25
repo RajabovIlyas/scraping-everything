@@ -2,7 +2,8 @@
 
 import { createContext, useState } from 'react';
 import { ParseFormModel } from '@/models/parse-form.model';
-import { postRequest } from '@/request/post.request';
+import { getPostRequest } from './action';
+import { htmlScraping } from '@/scraping/html.scraping';
 
 
 
@@ -29,8 +30,8 @@ export default function StateContextComponent({
 
   const getPage = async (parse: ParseFormModel) => {
 
-    const result = await postRequest(parse);
-    setResult(result);
+    const result = await getPostRequest(parse);
+    setResult(await htmlScraping(result, parse));
   };
 
 

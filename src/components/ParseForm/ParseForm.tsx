@@ -3,7 +3,6 @@
 import { useFormSetting } from '@/components/ParseForm/parse-form.hook';
 import FormFields from '@/components/ParseForm/FormFields';
 import { PARSE_FIELD_DEFAULT } from '@/constants/parse-filed.constant';
-import ScrapingResult from '@/components/ScrapingResult';
 
 const ParseForm = () => {
   const { control, formFields, register, handleSubmit, errors, onSubmit } =
@@ -23,6 +22,16 @@ const ParseForm = () => {
             <p className='form-wrong'>{errors?.url?.message}</p>
           </div>
         </div>
+        <div>
+          <div>
+            <label htmlFor='searchGroupQuery'
+                   className='form-label'>
+              Search Group Query
+            </label>
+            <input {...register('searchGroupQuery')} className='form-input'/>
+            <p className='form-wrong'>{errors?.searchGroupQuery?.message}</p>
+          </div>
+        </div>
         <FormFields formFields={formFields} register={register} errors={errors} />
         <p className='form-wrong'>{errors?.fields?.message}</p>
 
@@ -38,7 +47,6 @@ const ParseForm = () => {
 
 
       </form>
-      <ScrapingResult result={{}} />
     </>
   );
 };

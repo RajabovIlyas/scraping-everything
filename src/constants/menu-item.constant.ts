@@ -1,6 +1,14 @@
 export const menuItems = [
   {
-    title: 'Parser',
-    path: '/parser',
+    title: 'Simple',
+    path: '/simple',
+  },
+  {
+    title: 'Middle',
+    path: '/middle',
+  },
+  {
+    title: 'Advance',
+    path: '/advance',
   },
 ];

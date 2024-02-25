@@ -2,6 +2,7 @@ import { ParseType } from '@/enums/parse-type.enum';
 
 export interface ParseFieldModel {
   propertyType: ParseType;
-  className: string;
+  searchQuery: string;
   propertyName: string;
+  attribute: string;
 }
